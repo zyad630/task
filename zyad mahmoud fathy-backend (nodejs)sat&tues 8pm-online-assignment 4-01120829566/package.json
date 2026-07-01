@@ -1,0 +1,12 @@
+{
+  "name": "assignment4-crud",
+  "version": "1.0.0",
+  "description": "Assignment 4 - Simple CRUD Operations Using Express.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}

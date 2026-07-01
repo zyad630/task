@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Assignment4 - CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Add User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"User 1\",\n  \"age\": 27,\n  \"email\": \"user@email.com\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/user", "host": ["{{baseUrl}}"], "path": ["user"] }
+      }
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 30\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/user/1", "host": ["{{baseUrl}}"], "path": ["user", "1"] }
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/user/1", "host": ["{{baseUrl}}"], "path": ["user", "1"] }
+      }
+    },
+    {
+      "name": "Get User By Name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/user/getByName?name=ali",
+          "host": ["{{baseUrl}}"],
+          "path": ["user", "getByName"],
+          "query": [{ "key": "name", "value": "ali" }]
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/user", "host": ["{{baseUrl}}"], "path": ["user"] }
+      }
+    },
+    {
+      "name": "Filter Users By Min Age",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/user/filter?minAge=25",
+          "host": ["{{baseUrl}}"],
+          "path": ["user", "filter"],
+          "query": [{ "key": "minAge", "value": "25" }]
+        }
+      }
+    },
+    {
+      "name": "Get User By Id",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/user/1", "host": ["{{baseUrl}}"], "path": ["user", "1"] }
+      }
+    }
+  ]
+}
